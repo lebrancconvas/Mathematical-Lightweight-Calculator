@@ -1,0 +1,19 @@
+//Just a template for coding functional react components.
+
+//Setup 
+//First Change This File Name and Change File Extension from ".txt" to ".jsx" 
+
+//You can import any libraries or modules that you need in the component. 
+import React from "react";
+
+//Change "addFileNameWithoutFileExtension" to your filename. 
+const addFileNameWithoutFileExtension = () => {
+	return(
+		<div>
+			//Add Any HTML Code you want. 
+		</div>
+	)
+}
+
+//Change "addFileNameWithoutFileExtension" to your filename. 
+export default addFileNameWithoutFileExtension;  
