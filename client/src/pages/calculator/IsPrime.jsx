@@ -4,19 +4,26 @@ import {Box} from '@mui/system';
 
 const IsPrime = () => {
 	const [number, setNumber] = useState(0); 
-	const [primeStatus, setPrimeStatus] = useState(true);  
+	// const [primeStatus, setPrimeStatus] = useState(true);  
 	const isPrime = (num) => {
-		for(let i = 2; i < num; i++) {
-			if(num % i === 0) {
-				setPrimeStatus(false);   
-			} 
+		if(num === 1) {
+			return false;
+		} else if(num === 2) {
+			return true; 
+		} else {
+			for(let i = 2; i < num; i++) {
+				if(num % i === 0) {
+					return false;
+				}
+			}
+			return true;
 		}
-	}
-	const calPrime = async (e) => {
+	}; 
+	const calPrime = (e) => {
 		e.preventDefault(); 
-		await isPrime(number); 
-		primeStatus ? alert(`${number} is a prime number`) : alert(`${number} is not a prime number`); 
-	}
+		// setPrimeStatus(isPrime(number));  
+		isPrime(number) ? alert(`${number} is a prime number`) : alert(`${number} is not a prime number`);  
+	}; 
 	return(
 		<div>
 			<Box sx={{textAlign: 'center'}}> 
