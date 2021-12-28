@@ -1,9 +1,13 @@
 import React, {useState} from "react";
+import {useNavigate} from 'react-router-dom'; 
 import {Typography, Button, TextField} from '@mui/material'; 
 import {Box} from '@mui/system'; 
 
 const IsPrime = () => {
 	const [number, setNumber] = useState(0); 
+	const navigator = useNavigate();
+	const toHome = () => navigator('/'); 
+	const refreshPage = () => window.location.reload(); 
 	// const [primeStatus, setPrimeStatus] = useState(true);  
 	const isPrime = (num) => {
 		if(num === 1) {
@@ -36,7 +40,9 @@ const IsPrime = () => {
 					<form onSubmit={calPrime}>  
 						<TextField type="number" sx={{width: 500}} placeholder="Insert your number." onChange={event => setNumber(event.target.value)} /> 
 						<Box mt={2}> 
-							<Button type="submit" variant="contained">Calculate</Button> 
+							<Button variant="contained" onClick={toHome} sx={{mr: 2}}>Back</Button>
+							<Button type="submit" variant="contained" sx={{mr: 2}}>Calculate</Button> 
+							<Button variant="contained" onClick={refreshPage}>Refresh</Button> 
 						</Box>
 					</form>
 				</Box>
